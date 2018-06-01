@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Dimensions, Platform } from 'react-native';
-import { createStackNavigator, TabNavigator } from 'react-navigation';
+import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 
 import Bookcase from './screens/Bookcase';
@@ -12,7 +12,7 @@ import EditBook from './screens/EditBook';
 
 let screen = Dimensions.get('window');
 
-export const Tabs = TabNavigator({
+export const Tabs = createBottomTabNavigator({
   'Flyers': {
     screen: Bookcase,
     navigationOptions: {
@@ -27,10 +27,10 @@ export const Tabs = TabNavigator({
       tabBarIcon: ({ tintColor }) => <Icon name="ios-map-outline" type="ionicon" size={28} color={tintColor} />
     },
   },
-  'Add Book': {
+  'Add Flyer': {
     screen: AddBook,
     navigationOptions: {
-      tabBarLabel: 'Add Book',
+      tabBarLabel: 'Add Flyer',
       tabBarIcon: ({ tintColor }) => <Icon name="ios-add-circle-outline" type="ionicon" size={28} color={tintColor} />
     },
   },
