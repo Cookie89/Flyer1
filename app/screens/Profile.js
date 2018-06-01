@@ -2,16 +2,33 @@ import React, { Component } from 'react';
 import {
   StyleSheet,
   Text,
-  View
+  View,
+  TextInput,
+  Button,
+  Alert
 } from 'react-native';
 
 export default class Profile extends Component {
+  _onPressButton() {
+    Alert.alert('Placeholder for save call')
+  }
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>
-          Profile
-        </Text>
+        <TextInput style={styles.sTextInput} placeholder='First Name' />
+        <TextInput style={styles.sTextInput} placeholder='Last Name' />
+        <TextInput style={styles.sTextInput} placeholder='Email Address' />
+        <TextInput style={styles.sTextInput} placeholder='Phone Number' />
+        <TextInput style={styles.sTextInput} placeholder='Location' />
+        <TextInput style={styles.sTextInput} placeholder='Membership' />
+        <Button style={styles.sButton}
+          onPress={this._onPressButton}
+          title="Save"
+        />
+        <Button style={styles.sButton}
+          onPress={this._onPressButton}
+          title="Sign Out"
+        />
       </View>
     );
   }
@@ -20,13 +37,22 @@ export default class Profile extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    paddingTop: 25,
     backgroundColor: '#F5FCFF',
   },
   title: {
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
+  },
+  sTextInput: {
+    flexDirection: 'column',
+    borderBottomWidth: 2,
+    alignItems: 'flex-start',
+    textAlignVertical: "center",
+    margin: 30
+  },
+  sButton: {
+    margin: 20
   }
 });
