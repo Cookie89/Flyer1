@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {
-  StatusBar,
   StyleSheet,
   Text,
   View,
@@ -64,9 +63,6 @@ export default class MyFlyers extends Component {
     let { sContainer, sSearchBar, sTextItem } = styles;
     return (
       <View style={styles.container}>
-        <StatusBar
-          barStyle="light-content"
-        />
         <TextInput
           placeholder={"Search"}
           style={sSearchBar}
