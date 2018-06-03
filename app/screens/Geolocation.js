@@ -5,7 +5,7 @@ import {
   View
 } from 'react-native';
 
-export default class AddBook extends Component {
+export default class AddFlyer extends Component {
   constructor(props) {
     super(props);
 

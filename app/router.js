@@ -3,9 +3,9 @@ import { Dimensions, Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 
-import MyFlyers from './screens/MyFlyers';
-import Flyers from './screens/Flyers';
-import AddBook from './screens/AddBook';
+import MyFlyers from './screens/MyFlyer/MyFlyers';
+import Flyers from './screens/Explore/Flyers';
+import AddFlyer from './screens/AddFlyer/AddFlyer';
 import Lists from './screens/Lists';
 import Profile from './screens/Profile';
 import EditBook from './screens/EditBook';
@@ -23,12 +23,12 @@ export const Tabs = createBottomTabNavigator({
   'Flyers': {
     screen: Flyers,
     navigationOptions: {
-      tabBarLabel: 'Flyers',
+      tabBarLabel: 'Explore',
       tabBarIcon: ({ tintColor }) => <Icon name="ios-map-outline" type="ionicon" size={28} color={tintColor} />
     },
   },
   'Add Flyer': {
-    screen: AddBook,
+    screen: AddFlyer,
     navigationOptions: {
       tabBarLabel: 'Add Flyer',
       tabBarIcon: ({ tintColor }) => <Icon name="ios-add-circle-outline" type="ionicon" size={28} color={tintColor} />
@@ -70,8 +70,8 @@ export const BookcaseStack = createStackNavigator({
 export const CreateRootNavigator = () => {
   return createStackNavigator(
     {
-      BookcaseStack: {
-        screen: BookcaseStack,
+      MyFlyers: {
+        screen: MyFlyers,
         navigationOptions: {
           gesturesEnabled: false
         }

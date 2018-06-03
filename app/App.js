@@ -13,20 +13,15 @@ import {
   StatusBar
 } from 'react-native';
 
-import * as firebase from 'firebase';
+import { YellowBox } from 'react-native';
+
+import Firebase, { db } from './config/firebase.app';
 
 import { Tabs } from './router';
 
-// Initialize Firebase
-const firebaseConfig = {
-  apiKey: "AIzaSyAgXAB_2wc5beE_cElHktaAP1kfVgpBViA",
-    authDomain: "flyer-c44ba.firebaseapp.com",
-    databaseURL: "https://flyer-c44ba.firebaseio.com",
-    projectId: "flyer-c44ba",
-    storageBucket: "flyer-c44ba.appspot.com",
-    messagingSenderId: "452858331704"
-};
-const firebaseApp = firebase.initializeApp(firebaseConfig);
+// REMOVE This is to hide Warnings during development
+YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated', 'Module RCTImageLoader', 'Remote debugger is in a background', 'Warning: Failed prop type', 'Warning: Failed child context type']);
+
 type Props = {};
 export default class App extends Component<Props> {
   render() {
