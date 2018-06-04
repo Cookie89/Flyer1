@@ -9,7 +9,8 @@ import {
 
 import { Icon } from 'react-native-elements';
 
-export default class BookcaseItem extends Component {
+export default class FlyerItem extends Component {
+
     render() {
         return(
           <View style={styles.rowContainer}>

@@ -1,8 +1,8 @@
 
-import Firebase from 'firebase';
+import * as firebase from 'firebase';
 
 // Initialize Firebase
-let config = {
+const config = {
   apiKey: "AIzaSyAgXAB_2wc5beE_cElHktaAP1kfVgpBViA",
     authDomain: "flyer-c44ba.firebaseapp.com",
     databaseURL: "https://flyer-c44ba.firebaseio.com",
@@ -11,5 +11,6 @@ let config = {
     messagingSenderId: "452858331704"
 };
 
-let app = Firebase.initializeApp(config);
-export const db = app.database();
+firebase.initializeApp(config);
+
+export default firebase;

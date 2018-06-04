@@ -85,7 +85,7 @@ export const CreateRootNavigator = () => {
     },
     {
       headerMode: "none",
-      mode: "modal"
+      mode: "float"
     }
   );
 };

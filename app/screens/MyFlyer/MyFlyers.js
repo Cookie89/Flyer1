@@ -9,7 +9,7 @@ import SearchableFlatlist from "searchable-flatlist";
 
 // Replace with Get Flyers from Firebase
 
-import BookcaseItem from './BookcaseItem';
+import FlyerItem from './FlyerItem';
 
 export default class MyFlyers extends Component {
   constructor(props) {
@@ -49,7 +49,7 @@ export default class MyFlyers extends Component {
   }
 
   _renderItem = ({item}) => (
-    <BookcaseItem
+    <FlyerItem
       id={item.id}
       title={item.title}
       author={item.author}
