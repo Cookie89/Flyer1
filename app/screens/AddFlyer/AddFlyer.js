@@ -9,9 +9,9 @@ import {
   TouchableHighlight,
   AlertIOS
 } from 'react-native';
+import firebase from 'firebase';
 
 // ToRefactor -- Create Service to handle db events
-import { db } from 'Flyer/app/config/firebase.app';
 
 export default class AddItem extends Component {
   constructor(props) {
@@ -37,8 +37,8 @@ export default class AddItem extends Component {
       		   comments:this.refs.comment.value.trim()
       		}
 
-    db.ref().child('items').push(data);
-    db.ref().on('child_added', function(snapshot) {
+    firebase.ref().child('items').push(data);
+    firebase.ref().on('child_added', function(snapshot) {
      var data = snapshot.val();
       snapshot.forEach(function(childSnap) {
       console.log(childSnap.val());

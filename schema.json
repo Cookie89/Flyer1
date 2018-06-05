@@ -1,0 +1,36 @@
+{
+  flyer: {
+    user: {
+      name: string,
+      avatar: string,
+      authorized: boolean,
+      authorizing: boolean
+    }
+    owner: [
+      {
+        id: string,
+        name: string,
+        phone: integer,
+        address: [
+          {
+            houseno: string,
+            streetname: string,
+            city: string,
+            county: string,
+            postcode: string,
+            country: string,
+            phone: integer,
+            email: string
+          },
+          meta: {
+            isFetching: boolean,
+            lastFetched: timestamp,
+            height: integer,
+            createdate: timestamp,
+            modifieddate: timestampe
+          }
+        ]
+      }
+    ]
+  }
+}

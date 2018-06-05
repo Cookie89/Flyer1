@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import {
   StyleSheet,
-  Text,
   View,
   TextInput,
-  Button,
   Alert
 } from 'react-native';
+import firebase from 'firebase';
+import Button from '../components/Button';
 
 export default class Profile extends Component {
   _onPressButton() {
@@ -25,10 +25,9 @@ export default class Profile extends Component {
           onPress={this._onPressButton}
           title="Save"
         />
-        <Button style={styles.sButton}
-          onPress={this._onPressButton}
-          title="Sign Out"
-        />
+        <Button onPress={() => firebase.auth().signOut()}>
+          Log Out
+        </Button>
       </View>
     );
   }

@@ -5,7 +5,7 @@ import {
   View,
   TextInput
 } from 'react-native';
-import SearchableFlatlist from "searchable-flatlist";
+import SearchableFlatlist from 'searchable-flatlist';
 
 // Replace with Get Flyers from Firebase
 
@@ -45,10 +45,10 @@ export default class MyFlyers extends Component {
           thumbnail: 'https://www.createalogoonline.com/wp-content/uploads/2016/06/000638-Online-Logo-Maker-Gardener-Logo-design.jpg'
         }
       ]
-    }
+    };
   }
 
-  _renderItem = ({item}) => (
+  _renderItem = ({ item }) => (
     <FlyerItem
       id={item.id}
       title={item.title}
@@ -64,12 +64,13 @@ export default class MyFlyers extends Component {
     return (
       <View style={styles.container}>
         <TextInput
-          placeholder={"Search"}
+          placeholder={'Search'}
           style={sSearchBar}
           onChangeText={searchTerm => this.setState({ searchTerm })}
-          />
+        />
         <SearchableFlatlist
-          searchProperty={this.state.books.filter(item => item.title.includes(this.state.searchTerm))}
+          searchProperty={
+            this.state.books.filter(item => item.title.includes(this.state.searchTerm))}
           searchTerm={this.state.searchTerm}
           data={this.state.books}
           containerStyle={{ flex: 1 }}
@@ -88,20 +89,20 @@ const styles = StyleSheet.create({
   },
   sContainer: {
     flex: 1,
-    backgroundColor: "#F5FCFF"
+    backgroundColor: '#F5FCFF'
   },
   sTextItem: {
     height: 50,
-    width: "100%",
-    textAlign: "center",
-    textAlignVertical: "center",
+    width: '100%',
+    textAlign: 'center',
+    textAlignVertical: 'center',
     fontSize: 18
   },
   sSearchBar: {
     paddingHorizontal: 10,
     margin: 20,
     height: 45,
-    borderColor: "gray",
+    borderColor: 'gray',
     borderWidth: 1,
     fontSize: 16
   }

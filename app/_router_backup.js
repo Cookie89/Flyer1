@@ -9,6 +9,7 @@ import AddFlyer from './screens/AddFlyer/AddFlyer';
 import Lists from './screens/Lists';
 import Profile from './screens/Profile';
 import EditBook from './screens/EditBook';
+import LoginForm from './screens/Login/LoginForm';
 
 let screen = Dimensions.get('window');
 
@@ -75,6 +76,19 @@ export const Tabs = createBottomTabNavigator({
       <Icon
         name="ios-person-outline"
         type="ionicon"
+        size={28}
+        color={tintColor}
+      />
+    },
+  },
+  LoginForm: {
+    screen: LoginForm,
+    navigationOptions: {
+      tabBarLabel: 'Login',
+      tabBarIcon: ({ tintColor }) =>
+      <Icon
+        name="login"
+        type="entypo"
         size={28}
         color={tintColor}
       />
